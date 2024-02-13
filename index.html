@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <table>
+        <tr>
+            <td colspan="4"><input type="text" id="screen" readonly></td>
+        </tr>
+
+        <tr class="grid">
+            <td class="btn"></td>
+            <td class="btn"></td>
+            <td class="btn" onclick="cancel()"><i class="fa-solid fa-delete-left"></i></td>
+            <td id="color" class="btn" onclick="AT_add('/')">/</td>
+        </tr>
+
+        <tr class="grid">
+            <td class="btn"  onclick="AT_add(7)">7</td>
+            <td class="btn"  onclick="AT_add(8)">8</td>
+            <td class="btn"  onclick="AT_add(9)">9</td>
+            <td id="color" class="btn" onclick="AT_add('*')">*</td>
+        </tr>
+
+        <tr class="grid">
+            <td class="btn"  onclick="AT_add(4)">4</td>
+            <td class="btn"  onclick="AT_add(5)">5</td>
+            <td class="btn"  onclick="AT_add(6)">6</td>
+            <td id="color" class="btn" onclick="AT_add('-')">-</td>
+        </tr>
+
+        <tr class="grid">
+            <td class="btn"  onclick="AT_add(1)">1</td>
+            <td class="btn"  onclick="AT_add(2)">2</td>
+            <td class="btn"  onclick="AT_add(3)">3</td>
+            <td id="color" class="btn" onclick="AT_add('+')">+</td>
+        </tr>
+
+        <tr class="grid">
+            <td class="btn"  onclick="AT_add(0)">0</td>
+            <td class="btn"  onclick="AT_add('00')">00</td>
+            <td class="btn"  onclick="AT_add('.')">.</td>
+            <td id="color" class="btn" onclick="exe()">=</td>
+        </tr>
+
+    </table>
+ 
+    <script>
+        var screen = document.getElementById('screen');
+        function AT_add(v){
+            screen.value+=v;
+        }
+        function exe(){
+            screen.value = eval(screen.value);
+        }
+        function cancel(){
+            screen.value = screen.value.substr(0,screen.value.length-1);
+        }
+    </script>
+
+
+
+</body>
+</html>
